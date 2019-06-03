@@ -1,5 +1,5 @@
 # ADBSharp
-![https://github.com/githubcatw/ADBSharp/blob/master/Images/sharpdroid.png](Logo)
+![Logo](https://github.com/githubcatw/ADBSharp/blob/master/Images/sdmini.png)
 
 A package allowing ADB and Fastboot operations from C#.
 
