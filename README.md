@@ -7,6 +7,6 @@ Did you want to create an app that installs a mobile app? An app that flashes so
 
 It's easy to use!
 
-For scripting references, tutorials and other info, visit the [https://github.com/githubcatw/ADBSharp/wiki](wiki).
+For scripting references, tutorials and other info, visit the [wiki](https://github.com/githubcatw/ADBSharp/wiki).
 
-If you have a problem, write an [https://github.com/githubcatw/ADBSharp/issues](issue).
+If you have a problem, submit an [issue](https://github.com/githubcatw/ADBSharp/issues).
