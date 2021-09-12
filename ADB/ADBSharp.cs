@@ -13,11 +13,6 @@ namespace NUDev.ADBSharp {
         public string adbPath;
 
         /// <summary>
-        /// The path to Fastboot.
-        /// </summary>
-        public string fbPath;
-
-        /// <summary>
         /// The standard output of the latest command.
         /// </summary>
         public string LastStdout;
@@ -49,27 +44,6 @@ namespace NUDev.ADBSharp {
             }
         }
 
-        /// <summary>
-        /// Run Fastboot with arguments.
-        /// </summary>
-        /// <param name="args">The arguments.</param>
-        public void RunFastboot(string args) {
-            if (fbPath == "") {
-                throw new InvalidFileException("Fastboot path is invalid.");
-            } else {
-                var processStartInfo = new ProcessStartInfo {
-                    FileName = fbPath,
-                    Arguments = args,
-                    RedirectStandardOutput = true,
-                    RedirectStandardError = true,
-                    UseShellExecute = false
-                };
-                var process = Process.Start(processStartInfo);
-                LastStdout = process.StandardOutput.ReadToEnd();
-                LastStderr = process.StandardError.ReadToEnd();
-                process.WaitForExit();
-            }
-        }
 
         /// <summary>
         /// Install an APK.
