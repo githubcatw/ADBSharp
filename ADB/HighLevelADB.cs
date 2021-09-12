@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace NUDev.ADBSharp {
+namespace NUDev.ADBSharp.HL {
     public static class HighLevelADB {
 
         /// <summary>
