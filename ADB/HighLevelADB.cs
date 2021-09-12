@@ -48,5 +48,17 @@ namespace NUDev.ADBSharp.HL {
             if (devices[0].StartsWith("* daemon")) return devices.Skip(3).ToArray();
             else return devices.Skip(1).ToArray();
         }
+
+
+        /// <summary>
+        /// Reboots the connected phone.
+        /// </summary>
+        public static void Reboot(this ADB adb, BootMode mode) {
+            if (mode == BootMode.Android) adb.Run("reboot");
+            else {
+                var smode = (mode == BootMode.Bootloader ? "bootloader" : "recovery");
+                adb.Run("reboot " + smode);
+            }
+        }
     }
 }
