@@ -1,4 +1,5 @@
 ﻿using System.Diagnostics;
+using System.IO;
 
 namespace NUDev.ADBSharp {
     public class Fastboot {
@@ -22,7 +23,7 @@ namespace NUDev.ADBSharp {
         /// </summary>
         /// <param name="args">The arguments.</param>
         public string Run(string args) {
-            if (fbPath == "") {
+            if (fbPath == "" || !File.Exists(fbPath)) {
                 throw new InvalidFileException("Fastboot path is invalid.");
             }
             else {

@@ -1,4 +1,5 @@
 ﻿using System.Diagnostics;
+using System.IO;
 
 namespace NUDev.ADBSharp {
     public class ADB {
@@ -22,7 +23,7 @@ namespace NUDev.ADBSharp {
         /// </summary>
         /// <param name="args">The arguments.</param>
         public string Run(string args) {
-            if (adbPath == "") {
+            if (adbPath == "" || !File.Exists(adbPath)) {
                 throw new InvalidFileException("ADB path is invalid.");
             } else {
                 var processStartInfo = new ProcessStartInfo {
