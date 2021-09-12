@@ -44,25 +44,5 @@ namespace NUDev.ADBSharp {
             }
             return LastStdout;
         }
-
-
-        /// <summary>
-        /// Install an APK.
-        /// </summary>
-        /// <param name="apkPath">The APK path.</param>
-        /// <param name="pid">The package name.</param>
-        public void Install(string apkPath, string pid) {
-            RunAdb("uninstall " + pid);
-            RunAdb("install \"" + apkPath + "\"");
-        }
-		
-		/// <summary>
-        /// Download a file.
-        /// </summary>
-        /// <param name="localPath">The path of the file on the phone.</param>
-        /// <param name="destPath">The destination path.</param>
-        public void DownloadFile(string localPath, string destPath) {
-            RunAdb("pull " + localPath + " " + destPath);
-        }
     }
 }
