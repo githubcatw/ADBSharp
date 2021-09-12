@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace NUDev.ADBSharp {
-    public class ADBSharp {
+    public class ADB {
         /// <summary>
         /// The path to ADB.
         /// </summary>
