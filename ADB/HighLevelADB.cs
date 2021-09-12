@@ -13,8 +13,8 @@ namespace NUDev.ADBSharp {
         /// <param name="apkPath">The APK path.</param>
         /// <param name="pid">The package name.</param>
         public static void Install(this ADB adb, string apkPath, string pid) {
-            adb.RunAdb("uninstall " + pid);
-            adb.RunAdb("install \"" + apkPath + "\"");
+            adb.Run("uninstall " + pid);
+            adb.Run("install \"" + apkPath + "\"");
         }
 
         /// <summary>
@@ -23,7 +23,7 @@ namespace NUDev.ADBSharp {
         /// <param name="localPath">The path of the file on the phone.</param>
         /// <param name="destPath">The destination path.</param>
         public static void DownloadFile(this ADB adb, string localPath, string destPath) {
-            adb.RunAdb("pull " + localPath + " " + destPath);
+            adb.Run("pull " + localPath + " " + destPath);
         }
     }
 }
