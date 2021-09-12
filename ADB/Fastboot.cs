@@ -26,7 +26,7 @@ namespace NUDev.ADBSharp {
         /// Run Fastboot with arguments.
         /// </summary>
         /// <param name="args">The arguments.</param>
-        public void RunFastboot(string args) {
+        public string RunFastboot(string args) {
             if (fbPath == "") {
                 throw new InvalidFileException("Fastboot path is invalid.");
             }
@@ -44,6 +44,7 @@ namespace NUDev.ADBSharp {
                 LastStderr = process.StandardError.ReadToEnd();
                 process.WaitForExit();
             }
+            return LastStdout;
         }
     }
 }

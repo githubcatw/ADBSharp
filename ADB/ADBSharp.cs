@@ -26,7 +26,7 @@ namespace NUDev.ADBSharp {
         /// Run ADB with arguments.
         /// </summary>
         /// <param name="args">The arguments.</param>
-        public void RunAdb(string args) {
+        public string RunAdb(string args) {
             if (adbPath == "") {
                 throw new InvalidFileException("ADB path is invalid.");
             } else {
@@ -42,6 +42,7 @@ namespace NUDev.ADBSharp {
                 LastStderr = process.StandardError.ReadToEnd();
                 process.WaitForExit();
             }
+            return LastStdout;
         }
 
 
