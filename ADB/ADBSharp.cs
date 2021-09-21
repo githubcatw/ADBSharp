@@ -1,4 +1,5 @@
-﻿using System.Diagnostics;
+﻿using System;
+using System.Diagnostics;
 using System.IO;
 
 namespace NUDev.ADBSharp {
@@ -22,7 +23,8 @@ namespace NUDev.ADBSharp {
         /// Run ADB with arguments.
         /// </summary>
         /// <param name="args">The arguments.</param>
-        public string Run(string args) {
+        /// <param name="silentError">If true an InvalidOperationException will be thrown if an error is returned. </param>
+        public string Run(string args, bool silentError = true) {
             if (adbPath == "" || !File.Exists(adbPath)) {
                 throw new InvalidFileException("ADB path is invalid.");
             } else {
@@ -36,6 +38,9 @@ namespace NUDev.ADBSharp {
                 var process = Process.Start(processStartInfo);
                 LastStdout = process.StandardOutput.ReadToEnd();
                 LastStderr = process.StandardError.ReadToEnd();
+                if (LastStderr != "" && silentError) {
+                    throw new InvalidOperationException(LastStderr);
+                }
                 process.WaitForExit();
             }
             return LastStdout;
