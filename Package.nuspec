@@ -2,15 +2,15 @@
 <package >
   <metadata>
     <id>ADBSharp</id>
-    <version>1.0.0</version>
+    <version>1.1.0</version>
     <authors>githubcatw</authors>
     <owners>githubcatw</owners>
     <projectUrl>https://github.com/githubcatw/ADBSharp/</projectUrl>
     <iconUrl>https://github.com/githubcatw/ADBSharp/raw/master/Images/sdmini.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>The sequel to ADBManager, ADBSharp is a way to run ADB or Fastboot commands from C#.</description>
-    <releaseNotes>Initial release</releaseNotes>
-    <copyright>Copyright 2019 githubcatw</copyright>
+    <releaseNotes>The library </releaseNotes>
+    <copyright>Copyright 2022 githubcatw</copyright>
     <tags>android mdm adb adbmanager mobile</tags>
   </metadata>
 </package>

@@ -42,6 +42,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ADBSharp.cs" />
+    <Compile Include="BootMode.cs" />
+    <Compile Include="Fastboot.cs" />
+    <Compile Include="HighLevelADB.cs" />
+    <Compile Include="InvaildFileException.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
