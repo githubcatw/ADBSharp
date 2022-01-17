@@ -60,5 +60,13 @@ namespace NUDev.ADBSharp.HL {
                 adb.Run("reboot " + smode);
             }
         }
+
+        /// <summary>
+        /// Run a shell command and return the output.
+        /// </summary>
+        /// <param name="cmd">The command.</param>
+        public static string RunShell(this ADB adb, string cmd) {
+            return adb.Run("shell " + cmd);
+        }
     }
 }
