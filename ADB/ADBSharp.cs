@@ -23,8 +23,8 @@ namespace NUDev.ADBSharp {
         /// Run ADB with arguments.
         /// </summary>
         /// <param name="args">The arguments.</param>
-        /// <param name="silentError">If true an InvalidOperationException will be thrown if an error is returned. </param>
-        public string Run(string args, bool silentError = true) {
+        /// <param name="throwError">If true an InvalidOperationException will be thrown if an error is returned. </param>
+        public string Run(string args, bool throwError = true) {
             if (adbPath == "" || !File.Exists(adbPath)) {
                 throw new InvalidFileException("ADB path is invalid.");
             } else {
@@ -38,7 +38,7 @@ namespace NUDev.ADBSharp {
                 var process = Process.Start(processStartInfo);
                 LastStdout = process.StandardOutput.ReadToEnd();
                 LastStderr = process.StandardError.ReadToEnd();
-                if (LastStderr != "" && silentError) {
+                if (LastStderr != "" && throwError) {
                     throw new InvalidOperationException(LastStderr);
                 }
                 process.WaitForExit();
