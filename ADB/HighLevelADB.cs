@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
 
-namespace NUDev.ADBSharp.HL {
+namespace NUDev.ADBSharp.Extensions {
     public static class HighLevelADB {
 
         /// <summary>
@@ -48,7 +48,6 @@ namespace NUDev.ADBSharp.HL {
             if (devices[0].StartsWith("* daemon")) return devices.Skip(3).ToArray();
             else return devices.Skip(1).ToArray();
         }
-
 
         /// <summary>
         /// Reboots the connected phone.
