@@ -64,8 +64,15 @@ namespace NUDev.ADBSharp.Extensions {
         /// Run a shell command and return the output.
         /// </summary>
         /// <param name="cmd">The command.</param>
-        public static string RunShell(this ADB adb, string cmd) {
-            return adb.Run("shell " + cmd);
+        public static string RunShell(this ADB adb, string cmd)
+            => adb.Run("shell " + cmd);
+
+        /// <summary>
+        /// Run an app.
+        /// </summary>
+        /// <param name="pkg">The package ID.</param>
+        public static void RunApp(this ADB adb, string pkg) {
+            adb.Run("shell am start " + pkg);
         }
     }
 }
